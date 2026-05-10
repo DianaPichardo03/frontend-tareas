@@ -1,0 +1,153 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+
+.container {
+  background: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.login-box h3 {
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 5px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+button {
+  padding: 6px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-add { 
+    background: #4CAF50; 
+}
+.btn-add:hover { 
+    background: #45a049; 
+    transform: scale(1.05);
+}
+
+.btn-edit { 
+    background: #2196F3; 
+}
+
+.btn-edit:hover {
+  background: #1976D2;
+  transform: scale(1.05);
+}
+
+.btn-delete { 
+    background: #f44336; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+
+  transition: 0.2s;
+  gap: 10px;
+}
+
+li:hover {
+  transform: scale(1.01);
+  background: #eaeaea;
+
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.filtros button {
+    flex: 1;
+    background: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.filtros button:hover {
+  background: #ddd;
+  transform: translateY(-2px);
+}
+
+.filtros span {
+  background: #2196F3;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+}

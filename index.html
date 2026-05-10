@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>📝 Tareas</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="container">
+    <h1>📝 Mis Tareas</h1>
+
+ <div id="loginBox" class="login-box">
+
+  <h3>🔐 Login</h3>
+
+  <input id="email" type="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+
+  <button class="btn-add" onclick="login()">Entrar</button>
+
+</div>
+
+<div id="app" style="display:none;">
+     <div class="input-group">
+      <input id="tarea">
+    <button onclick="agregarTarea()">Agregar</button>
+  </div>
+
+    <div class="filtros">
+
+      <button onclick="filtro('todas')">
+        Todas <span id="total">0</span>
+      </button>
+
+ <button onclick="filtro('pendientes')">
+        Pendientes <span id="pendientes">0</span>
+      </button>
+
+      <button onclick="filtro('completadas')">
+        ✔ <span id="completadas">0</span>
+      </button>
+
+    </div>
+
+    <ul id="lista"></ul>
+</div>
+<footer class="footer">
+      Elaborado por ISC Diana Pichardo 🤓
+    </footer>
+
+  </div>
+   <script src="app.js"></script>
+
+</body>
+
+</html>
