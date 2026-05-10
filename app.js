@@ -12,6 +12,27 @@ function authHeaders() {
     "Authorization": `Bearer ${getToken()}`
   };
 }
+async function register() {
+
+  const nombre = document.getElementById("rnombre").value;
+  const email = document.getElementById("remail").value;
+  const password = document.getElementById("rpassword").value;
+
+  const res = await fetch(`${API}/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nombre, email, password })
+  });
+
+  const data = await res.json();
+
+  if (res.ok) {
+    alert("Usuario creado ✅ ahora inicia sesión");
+  } else {
+    alert(data.error || "Error al registrar");
+  }
+}
+
 async function login() {
 
   const email = document.getElementById("email").value;
