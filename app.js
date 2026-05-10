@@ -2,14 +2,17 @@ const API = "https://backend-todo-3d74.onrender.com";
 
 let tareasGlobal = [];
 let filtroActual = "todas";
+
 function getToken() {
   return localStorage.getItem("token");
 }
 
 function authHeaders() {
+  const token = getToken();
+
   return {
     "Content-Type": "application/json",
-    "Authorization": `Bearer ${getToken()}`
+    "Authorization": token ? `Bearer ${token}` : ""
   };
 }
 async function register() {
@@ -46,15 +49,18 @@ async function login() {
 
   const data = await res.json();
 
+   console.log(data);
+
   if (data.token) {
-     localStorage.setItem("token", data.token);
+    localStorage.setItem("token", data.token);
 
     document.getElementById("loginBox").style.display = "none";
     document.getElementById("app").style.display = "block";
+    
     cargarTareas();
 
   } else {
-    alert("Login incorrecto ❌");
+    alert(data.error ||"Login incorrecto ❌");
   }
 
 }
@@ -62,6 +68,7 @@ async function cargarTareas() {
   const token = getToken();
   if (!token) {
     document.getElementById("loginBox").style.display = "block";
+     document.getElementById("app").style.display = "none";
     return;
   }
   const res = await fetch(`${API}/tareas`, {
@@ -71,6 +78,7 @@ async function cargarTareas() {
   if (!res.ok) {
     localStorage.removeItem("token");
     document.getElementById("loginBox").style.display = "block";
+     document.getElementById("app").style.display = "none";
     return;
   }
 
@@ -100,9 +108,9 @@ function renderizar() {
 
     const texto = document.createElement("span");
     texto.textContent = t.titulo;
-     if (t.hecha) 
+     if (t.hecha) {
       texto.classList.add("done");
-    
+     }
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
@@ -119,7 +127,8 @@ function renderizar() {
       cargarTareas();
 
     };
-     const editBtn = document.createElement("button");
+    
+    const editBtn = document.createElement("button");
     editBtn.textContent = "✏️";
     editBtn.classList.add("btn-edit");
 
@@ -161,8 +170,7 @@ function renderizar() {
 
     lista.appendChild(li);
 
-  });
-
+   });
   document.getElementById("total").textContent = tareasGlobal.length;
   document.getElementById("pendientes").textContent =
     tareasGlobal.filter(t => !t.hecha).length;
