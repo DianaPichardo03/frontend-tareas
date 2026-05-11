@@ -41,6 +41,18 @@ function actualizarFechaHora() {
     });
 }
 
+function logout() {
+  localStorage.removeItem("token");
+
+  tareasGlobal = [];
+
+  document.getElementById("lista").innerHTML = "";
+
+  document.getElementById("welcomeMsg").textContent = "";
+
+  document.getElementById("loginBox").style.display = "block";
+  document.getElementById("app").style.display = "none";
+}
 async function register() {
 
   const nombre = document.getElementById("rnombre").value;
@@ -244,6 +256,8 @@ window.onload = () => {
   } else {
     loginBox.style.display = "block";
     app.style.display = "none"; 
+
+    document.getElementById("welcomeMsg").textContent = "";
   }
 };
 function togglePassword() {
@@ -270,6 +284,9 @@ function logout() {
   tareasGlobal = [];
 
   document.getElementById("lista").innerHTML = "";
+  
+  document.getElementById("welcomeMsg").textContent = "";
+  
   document.getElementById("loginBox").style.display = "block";
   document.getElementById("app").style.display = "none";
 }

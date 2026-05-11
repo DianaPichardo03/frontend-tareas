@@ -1,12 +1,19 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
   display: flex;
   justify-content: center;
   padding-top: 40px;
+}
+h1 {
+  text-align: center;
+  margin: 10px 0 20px;
+  font-size: 28px;
+  font-weight: bold;
 }
 body.dark {
   background: #121212;
@@ -33,6 +40,7 @@ body.dark .filtros button {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow: hidden;
+  position: relative;
 }
 
 .top-bar {
@@ -172,11 +180,21 @@ li span {
   font-size: 13px;
   color: #777;
 }
+.login-box div {
+  position: relative;
+  width: 100%;
+}
 
+.login-box div input {
+  width: 100%;
+  padding-right: 35px;
+}
 .eye {
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  font-size: 14px;
+  color: #666;
 }
