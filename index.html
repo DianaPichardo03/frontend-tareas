@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <label class="switch">
+  <input type="checkbox" onclick="toggleTheme()" id="themeToggle">
+  <span class="slider">
+    <span class="icon sun">☀️</span>
+    <span class="icon moon">🌙</span>
+  </span>
+</label>
   <h2 id="welcomeMsg"></h2>
   <p id="fecha"></p>
 
@@ -25,7 +31,6 @@
 <h2 id="welcomeMsg"></h2>
    <div class="container">
     <h1>📝 Mis Tareas</h1>
-<button onclick="toggleTheme()" class="btn-theme">🌙 Modo</button>
  <div id="loginBox" class="login-box">
 <h3>🆕 Registro</h3>
 

@@ -34,8 +34,8 @@ body.dark .filtros button {
 .switch {
   position: relative;
   display: inline-block;
-  width: 45px;
-  height: 24px;
+  width: 55px;
+  height: 28px;
 }
 
 .switch input {
@@ -47,22 +47,31 @@ body.dark .filtros button {
   cursor: pointer;
   background-color: #ccc;
   border-radius: 34px;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   transition: 0.3s;
 }
 
 .slider:before {
   content: "";
   position: absolute;
-  height: 18px;
-  width: 18px;
+  height: 22px;
+  width: 22px;
   left: 3px;
   bottom: 3px;
   background: white;
   border-radius: 50%;
   transition: 0.3s;
 }
+.sun {
+  left: 6px;
+}
 
+.moon {
+  right: 6px;
+}
 .switch input:checked + .slider {
   background-color: #333;
 }
