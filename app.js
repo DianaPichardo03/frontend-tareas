@@ -229,3 +229,12 @@ function toggleLoginPassword() {
     pass.type = "password";
   }
 }
+function logout() {
+  localStorage.removeItem("token");
+
+  tareasGlobal = [];
+
+  document.getElementById("lista").innerHTML = "";
+  document.getElementById("loginBox").style.display = "block";
+  document.getElementById("app").style.display = "none";
+}
