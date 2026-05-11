@@ -13,6 +13,7 @@ body {
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 .login-box {
   display: flex;
@@ -161,12 +162,19 @@ li:hover {
   transition: 0.2s;
 }
 
+.login-box div {
+  position: relative;
+}
 .eye:hover {
   color: #000;
   transform: scale(1.2);
 }
 
 .btn-logout {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.2s;
   background: #333;
   color: white;
   margin-top: 10px;

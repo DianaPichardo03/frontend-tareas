@@ -18,11 +18,10 @@
 
 <input id="rnombre" type="text" placeholder="Nombre">
 <input id="remail" type="email" placeholder="Email">
-<input id="rpassword" type="password" placeholder="Password">
 
  <div style="position: relative;">
         <input id="rpassword" type="password" placeholder="Password">
-        <span onclick="togglePassword()">
+        <span onclick="togglePassword()" style="position:absolute; right:10px; top:8px; cursor:pointer;">
           👁️
         </span>
 </div>
@@ -31,10 +30,9 @@
   <h3>🔐 Login</h3>
 
   <input id="email" type="email" placeholder="Email">
-  <input id="password" type="password" placeholder="Password">
   <div style="position: relative;">
         <input id="password" type="password" placeholder="Password">
-        <span onclick="toggleLoginPassword()">
+        <span onclick="toggleLoginPassword()"style="position:absolute; right:10px; top:8px; cursor:pointer;">
           👁️
         </span>
       </div>
@@ -47,6 +45,8 @@
       <input id="tarea">
     <button class="btn-add" onclick="agregarTarea()">Agregar</button>
   </div>
+  
+<button class="btn-logout" onclick="logout()">Salir 🚪</button>
 
     <div class="filtros">
 
@@ -66,7 +66,6 @@
 
     <ul id="lista"></ul>
 </div>
-<button class="btn-logout" onclick="logout()">Salir 🚪</button>
 
 <footer class="footer">
       Elaborado por ISC Diana Pichardo 🤓
