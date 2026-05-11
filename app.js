@@ -87,7 +87,7 @@ async function login() {
 
   const data = await res.json();
 
-
+  
   if (res.ok && data.token) {
 
     localStorage.setItem("token", data.token);
@@ -286,7 +286,7 @@ function logout() {
   document.getElementById("lista").innerHTML = "";
   
   document.getElementById("welcomeMsg").textContent = "";
-  
+
   document.getElementById("loginBox").style.display = "block";
   document.getElementById("app").style.display = "none";
 }
