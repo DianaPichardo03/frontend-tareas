@@ -18,14 +18,30 @@ function authHeaders() {
 function toggleTheme() {
   document.body.classList.toggle("dark");
 
-  const btn = document.querySelector(".btn-theme");
+  const isDark = document.body.classList.contains("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+}
 
-  if (document.body.classList.contains("dark")) {
-    btn.textContent = "☀️ Modo";
-  } else {
-    btn.textContent = "🌙 Modo";
+function loadTheme() {
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    document.getElementById("themeToggle").checked = true;
   }
 }
+function actualizarFechaHora() {
+  const ahora = new Date();
+
+  document.getElementById("fechaHora").textContent =
+    ahora.toLocaleString("es-MX", {
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+}
+
+setInterval(actualizarFechaHora, 1000);
 async function register() {
 
   const nombre = document.getElementById("rnombre").value;
@@ -227,7 +243,8 @@ async function agregarTarea() {
 
 }
 window.onload = () => {
-  mostrarFecha();
+  loadTheme();
+  actualizarFechaHora();
   const token = getToken();
 
   const loginBox = document.getElementById("loginBox");
