@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
@@ -10,7 +13,8 @@ body {
 .container {
   background: white;
   padding: 20px;
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: 0.3s;
@@ -184,15 +188,13 @@ li:hover {
 }
 
 .btn-logout {
-  position: fixed;
-  bottom: 20px;
-  width: 100%;
+   width: 100%;
   padding: 10px;
   border-radius: 10px;
   transition: 0.2s;
   background: #333;
   color: white;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .btn-logout:hover {
