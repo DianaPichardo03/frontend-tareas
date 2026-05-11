@@ -56,6 +56,10 @@ function logout() {
 async function register() {
 
   const nombre = document.getElementById("rnombre").value;
+  if (!nombre || !email || !password) {
+  alert("Completa todos los campos");
+  return;
+}
   const email = document.getElementById("remail").value;
   const password = document.getElementById("rpassword").value;
 
@@ -87,7 +91,6 @@ async function login() {
 
   const data = await res.json();
 
-  
   if (res.ok && data.token) {
 
     localStorage.setItem("token", data.token);
@@ -103,7 +106,8 @@ async function login() {
   } else {
     alert("Login incorrecto ❌");
   }
-
+document.getElementById("email").value = "";
+document.getElementById("password").value = "";
 }
 
 async function cargarTareas() {
@@ -289,4 +293,5 @@ function logout() {
 
   document.getElementById("loginBox").style.display = "block";
   document.getElementById("app").style.display = "none";
+  document.getElementById("themeToggle").checked = false;
 }

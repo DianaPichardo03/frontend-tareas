@@ -15,6 +15,11 @@ h1 {
   font-size: 28px;
   font-weight: bold;
 }
+
+#app {
+  text-align: center;
+}
+
 body.dark {
   background: #121212;
   color: #fff;
@@ -47,9 +52,8 @@ body.dark .filtros button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  font-size: 12px;
   margin-bottom: 10px;
+  padding: 5px 0;
 }
 .switch {
   position: relative;
@@ -144,6 +148,7 @@ button {
 ul {
   list-style: none;
   padding: 0;
+  text-align: left;
 
 }
 
@@ -196,12 +201,13 @@ li span {
 
 .password-box {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .password-box input {
   width: 100%;
   padding-right: 40px;
-  box-sizing: border-box;
 }
 
 .eye {
@@ -210,9 +216,9 @@ li span {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   color: #666;
-  transition: 0.2s;
+
 }
 
 .eye:hover {
