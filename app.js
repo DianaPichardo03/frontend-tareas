@@ -202,13 +202,16 @@ async function agregarTarea() {
 window.onload = () => {
   const token = getToken();
 
+  const loginBox = document.getElementById("loginBox");
+  const app = document.getElementById("app");
+
   if (token) {
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("app").style.display = "block";
+    loginBox.style.display = "none";
+    app.style.display = "block";
     cargarTareas();
   } else {
-    document.getElementById("loginBox").style.display = "block";
-    document.getElementById("app").style.display = "block";
+    loginBox.style.display = "block";
+    app.style.display = "none"; 
   }
 };
 function togglePassword() {
