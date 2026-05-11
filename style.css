@@ -194,11 +194,9 @@ li span {
 
 .password-box {
   position: relative;
-  width: 100%;
 }
 
 .password-box input {
-  width: 100%;
   padding-right: 35px;
 }
 
@@ -208,6 +206,5 @@ li span {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  font-size: 14px;
   color: #666;
 }
