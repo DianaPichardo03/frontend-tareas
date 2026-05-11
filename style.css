@@ -96,15 +96,23 @@ ul {
 li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   background: #f1f1f1;
-  padding: 10px;
+  padding: 10px 15px;
   margin-bottom: 8px;
   border-radius: 6px;
 
   transition: 0.2s;
   gap: 10px;
+}
+
+li input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+li span {
+  flex: 1;
 }
 
 li:hover {
@@ -155,7 +163,8 @@ li:hover {
 .eye {
   position: absolute;
   right: 10px;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
   font-size: 14px;
   color: #666;
@@ -165,12 +174,18 @@ li:hover {
 .login-box div {
   position: relative;
 }
+.login-box input {
+  width: 100%;
+  padding-right: 35px; /* espacio para el ojo */
+}
 .eye:hover {
   color: #000;
   transform: scale(1.2);
 }
 
 .btn-logout {
+  position: fixed;
+  bottom: 20px;
   width: 100%;
   padding: 10px;
   border-radius: 10px;
