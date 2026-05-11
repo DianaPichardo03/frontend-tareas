@@ -15,6 +15,17 @@ function authHeaders() {
     ...(token && { "Authorization": `Bearer ${token}` })
 };
 }
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+
+  const btn = document.querySelector(".btn-theme");
+
+  if (document.body.classList.contains("dark")) {
+    btn.textContent = "☀️ Modo";
+  } else {
+    btn.textContent = "🌙 Modo";
+  }
+}
 async function register() {
 
   const nombre = document.getElementById("rnombre").value;
@@ -52,12 +63,15 @@ async function login() {
   console.log("RESPUESTA BACKEND:", data);
 
   if (res.ok && data.token) {
+
+    document.getElementById("welcomeMsg").textContent =
+  "👋 Bienvenido " + email;
     
     localStorage.setItem("token", data.token);
 
     const loginBox = document.getElementById("loginBox");
     const app = document.getElementById("app");
-    
+
     loginBox.style.display = "none";
     app.style.display = "block";
     cargarTareas();
@@ -66,6 +80,17 @@ async function login() {
     alert(data.error ||"Login incorrecto ❌");
   }
 
+}
+function mostrarFecha() {
+  const fecha = new Date();
+
+  document.getElementById("fecha").textContent =
+    fecha.toLocaleDateString("es-MX", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
 }
 async function cargarTareas() {
   const token = getToken();
@@ -202,6 +227,7 @@ async function agregarTarea() {
 
 }
 window.onload = () => {
+  mostrarFecha();
   const token = getToken();
 
   const loginBox = document.getElementById("loginBox");
