@@ -170,8 +170,15 @@ li span {
 
 .filtros button {
   flex: 1;
-  background: #f1f1f1;
-  color: #333;
+  background: #2196F3;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.2s
+}
+.filtros button:hover {
+  background: #1976D2;
+  transform: translateY(-2px) scale(1.03);
 }
 
 .footer {
@@ -182,7 +189,7 @@ li span {
 }
 .login-box div {
   position: relative;
-  width: 100%;
+  
 }
 
 .login-box div input {
