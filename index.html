@@ -2,11 +2,11 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>📝 Tareas</title>
-     <link rel="stylesheet" href="style.css">
+  <title>📝 Tareas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -20,12 +20,24 @@
 <input id="remail" type="email" placeholder="Email">
 <input id="rpassword" type="password" placeholder="Password">
 
+ <div style="position: relative;">
+        <input id="rpassword" type="password" placeholder="Password">
+        <span onclick="togglePassword()">
+          👁️
+        </span>
+</div>
+
 <button class="btn-add" onclick="register()">Registrarse</button>
   <h3>🔐 Login</h3>
 
   <input id="email" type="email" placeholder="Email">
   <input id="password" type="password" placeholder="Password">
-
+  <div style="position: relative;">
+        <input id="password" type="password" placeholder="Password">
+        <span onclick="toggleLoginPassword()">
+          👁️
+        </span>
+      </div>
   <button class="btn-add" onclick="login()">Entrar</button>
 
 </div>
@@ -33,7 +45,7 @@
 <div id="app" style="display:none;">
      <div class="input-group">
       <input id="tarea">
-    <button onclick="agregarTarea()">Agregar</button>
+    <button class="btn-add" onclick="agregarTarea()">Agregar</button>
   </div>
 
     <div class="filtros">

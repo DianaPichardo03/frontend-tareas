@@ -151,3 +151,17 @@ li:hover {
   font-size: 13px;
   color: #777;
 }
+.eye {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: 0.2s;
+}
+
+.eye:hover {
+  color: #000;
+  transform: scale(1.2);
+}

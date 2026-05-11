@@ -49,9 +49,10 @@ async function login() {
 
   const data = await res.json();
 
-   console.log(data);
+  console.log("RESPUESTA BACKEND:", data);
 
-  if (data.token) {
+  if (res.ok && data.token) {
+    
     localStorage.setItem("token", data.token);
 
     document.getElementById("loginBox").style.display = "none";
@@ -210,3 +211,21 @@ window.onload = () => {
     document.getElementById("app").style.display = "block";
   }
 };
+function togglePassword() {
+  const pass = document.getElementById("rpassword");
+
+  if (pass.type === "password") {
+    pass.type = "text";
+  } else {
+    pass.type = "password";
+  }
+}
+function toggleLoginPassword() {
+  const pass = document.getElementById("password");
+
+  if (pass.type === "password") {
+    pass.type = "text";
+  } else {
+    pass.type = "password";
+  }
+}
