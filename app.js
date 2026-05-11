@@ -41,7 +41,6 @@ function actualizarFechaHora() {
     });
 }
 
-setInterval(actualizarFechaHora, 1000);
 async function register() {
 
   const nombre = document.getElementById("rnombre").value;
@@ -76,38 +75,25 @@ async function login() {
 
   const data = await res.json();
 
-  console.log("RESPUESTA BACKEND:", data);
 
   if (res.ok && data.token) {
 
-    document.getElementById("welcomeMsg").textContent =
-  "👋 Bienvenido " + email;
-    
     localStorage.setItem("token", data.token);
 
-    const loginBox = document.getElementById("loginBox");
-    const app = document.getElementById("app");
+    document.getElementById("welcomeMsg").textContent =
+  "👋 Bienvenido " + email;
 
-    loginBox.style.display = "none";
-    app.style.display = "block";
+  
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("app").style.display = "block";
     cargarTareas();
 
   } else {
-    alert(data.error ||"Login incorrecto ❌");
+    alert("Login incorrecto ❌");
   }
 
 }
-function mostrarFecha() {
-  const fecha = new Date();
 
-  document.getElementById("fecha").textContent =
-    fecha.toLocaleDateString("es-MX", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
-}
 async function cargarTareas() {
   const token = getToken();
   if (!token) {
@@ -245,6 +231,7 @@ async function agregarTarea() {
 window.onload = () => {
   loadTheme();
   actualizarFechaHora();
+  setInterval(actualizarFechaHora, 1000);
   const token = getToken();
 
   const loginBox = document.getElementById("loginBox");

@@ -4,32 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <label class="switch">
-  <input type="checkbox" onclick="toggleTheme()" id="themeToggle">
-  <span class="slider">
-    <span class="icon sun">☀️</span>
-    <span class="icon moon">🌙</span>
-  </span>
-</label>
-  <h2 id="welcomeMsg"></h2>
-  <p id="fecha"></p>
 
   <title>📝 Tareas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="top-bar">
-  <label class="switch">
-    <input type="checkbox" onclick="toggleTheme()" id="themeToggle">
-    <span class="slider"></span>
-  </label>
-
-  <div id="fechaHora"></div>
-</div>
-
-<h2 id="welcomeMsg"></h2>
    <div class="container">
+    <div class="top-bar">
+
+    <label class="switch">
+      <input type="checkbox" onclick="toggleTheme()" id="themeToggle">
+      <span class="slider">
+        <span class="icon sun">☀️</span>
+        <span class="icon moon">🌙</span>
+      </span>
+    </label>
+
+    <div id="fechaHora"></div>
+
+  </div>
+
+  <h2 id="welcomeMsg"></h2>
+
     <h1>📝 Mis Tareas</h1>
  <div id="loginBox" class="login-box">
 <h3>🆕 Registro</h3>
@@ -39,8 +36,8 @@
 
  <div style="position: relative;">
         <input id="rpassword" type="password" placeholder="Password">
-        <span onclick="togglePassword()" style="position:absolute; right:10px; top:8px; cursor:pointer;">
-          👁️
+        <span onclick="togglePassword()" class="eye">
+            👁️
         </span>
 </div>
 
@@ -50,8 +47,8 @@
   <input id="email" type="email" placeholder="Email">
   <div style="position: relative;">
         <input id="password" type="password" placeholder="Password">
-        <span onclick="toggleLoginPassword()"style="position:absolute; right:10px; top:8px; cursor:pointer;">
-          👁️
+        <span onclick="toggleLoginPassword()" class="eye">
+         👁️
         </span>
       </div>
   <button class="btn-add" onclick="login()">Entrar</button>
